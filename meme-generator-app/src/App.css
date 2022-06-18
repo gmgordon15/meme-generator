@@ -34,7 +34,9 @@
 
 .Meme-Container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 
 }
 
@@ -43,7 +45,7 @@
   flex-direction: column;
   width: 80%;
   height: 120px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 40px;
   justify-content: center;
   align-items: center;
@@ -63,7 +65,7 @@
 .Inputs{
   width: 260px;
   height: 35px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 3px #D5D4D8 solid;
   font-family: "Karla", sans-serif;
 }
@@ -75,11 +77,19 @@
   background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   font-family: "Karla", sans-serif;
   font-weight: bold;
 }
 
+
+img{
+  border: 2px solid black;
+  width: 80%;
+  height: 400px;
+  max-width: 80%;
+  max-height: 400px;
+}
 
 
 
