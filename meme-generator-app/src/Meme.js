@@ -23,21 +23,57 @@ function getMemeImage() {
     
 }
 
+
+function handleChange (event){
+    const{name, value} =  event.target     
+    setMeme(prevMeme =>({
+        ...prevMeme,
+        [name] : value
+    }))
+}
+
+
+
+
+
     return (
         <div className="Meme-Container">
            
                <div className="Input-Container">
                   
                   <div className="Input-Div">
-                  <input type="text" name="top-text" 
-                  className="Inputs" placeholder="Top Text"/>
+                  <input type="text" 
+                  name="topText" 
+                  className="Inputs" 
+                  placeholder="Top Text"
+                  value={meme.topText}
+                  onChange={handleChange}
+                  />
                   
-                  <input type="text" name="bottom-text" 
-                  className="Inputs" placeholder="Bottom Text"/>
+                  <input type="text" 
+                  name="bottomText" 
+                  className="Inputs" 
+                  placeholder="Bottom Text"
+                  value={meme.bottomText}
+                  onChange={handleChange}
+                  />
+                  
+                 
                  </div>
+
+                 
                  <button onClick={getMemeImage} className="Submit-Btn" >Generate New Meme</button>
+               
                </div>
-           <img src={meme.randomImage} alt=""/>
+               
+               
+                <div className="Div-Pic">
+                <img src={meme.randomImage} width="400px" height="500px"/>
+                <h2 className="meme--text--top">{meme.topText}</h2>
+                <h2 className="meme--text--bottom">{meme.bottomText}</h2>
+                </div>
+               
+            
         </div>
     )
 }
