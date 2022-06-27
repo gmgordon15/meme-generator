@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import memesData from './memesData'
+import {saveAs} from "file-saver"
 
 
 function Meme() {
@@ -9,6 +10,8 @@ const [meme, setMeme] = React.useState({
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg" 
 })
+
+console.log(meme.randomImage)
 const [allMemeImages, setAllMemeImages] = React.useState(memesData)
 
 
@@ -31,6 +34,7 @@ function handleChange (event){
         [name] : value
     }))
 }
+
 
 
 
@@ -62,7 +66,7 @@ function handleChange (event){
                  </div>
 
                  
-                 <button onClick={getMemeImage} className="Submit-Btn" >Generate New Meme</button>
+                 <button onClick={getMemeImage} value={meme.randomImage} className="Submit-Btn" >Generate New Meme</button>
                
                </div>
                
@@ -73,7 +77,8 @@ function handleChange (event){
                 <h2 className="meme--text--bottom">{meme.bottomText}</h2>
                 </div>
                
-            
+               
+               
         </div>
     )
 }
